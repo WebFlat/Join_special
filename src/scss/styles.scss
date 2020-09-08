@@ -1,13 +1,13 @@
 @import 'normalize';
 @import 'mixins';
-@font-face {font-family: "Yandex Sans Text Regular"; src: url("//db.onlinewebfonts.com/t/12a6e50c4994fd7f55ce28689647f50e.eot"); src: url("//db.onlinewebfonts.com/t/12a6e50c4994fd7f55ce28689647f50e.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/12a6e50c4994fd7f55ce28689647f50e.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/12a6e50c4994fd7f55ce28689647f50e.woff") format("woff"), url("//db.onlinewebfonts.com/t/12a6e50c4994fd7f55ce28689647f50e.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/12a6e50c4994fd7f55ce28689647f50e.svg#Yandex Sans Text Regular") format("svg"); }
-@font-face {font-family: "Yandex Sans Text Bold"; src: url("//db.onlinewebfonts.com/t/19dce9f9343376727bd8b1f4588e96ce.eot"); src: url("//db.onlinewebfonts.com/t/19dce9f9343376727bd8b1f4588e96ce.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/19dce9f9343376727bd8b1f4588e96ce.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/19dce9f9343376727bd8b1f4588e96ce.woff") format("woff"), url("//db.onlinewebfonts.com/t/19dce9f9343376727bd8b1f4588e96ce.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/19dce9f9343376727bd8b1f4588e96ce.svg#Yandex Sans Text Bold") format("svg"); }
-@font-face {font-family: "Yandex Sans Text"; src: url("//db.onlinewebfonts.com/t/994ad8754720a55fb859ac556f43f585.eot"); src: url("//db.onlinewebfonts.com/t/994ad8754720a55fb859ac556f43f585.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/994ad8754720a55fb859ac556f43f585.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/994ad8754720a55fb859ac556f43f585.woff") format("woff"), url("//db.onlinewebfonts.com/t/994ad8754720a55fb859ac556f43f585.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/994ad8754720a55fb859ac556f43f585.svg#Yandex Sans Text") format("svg"); }
+@import url("../fonts/YandexSansText-Regular/style.css");
+@import url("../fonts/YandexSansText-Medium/style.css");
+@import url("../fonts/YandexSansText-Bold/style.css");
 $descriptions-color: #cdcdcd;
-$red-color: #f90004;
+$red-color: #e42918;
 $primary-color: #303030;
 $title-color: #ffffff;
-$nav-color: rgba(255,255,255, .75);
+$nav-color: rgba(255,255,255, 1);
 $bg-whyMe: #f3f3f3;
 
 * {
@@ -15,7 +15,7 @@ $bg-whyMe: #f3f3f3;
 }
 
 :active, :hover, :focus {
-    outline: 0 !important;
+    outline-color: transparent !important;
     outline-offset: 0!important;
 }
 html {
@@ -23,72 +23,34 @@ html {
 	height: 100%;
 	scroll-behavior: smooth;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
+	html {
+		font-size: 9px;
+	}
+}
+@media screen and (max-width: 420px) {
 	html {
 		font-size: 8px;
 	}
 }
 
 body {
-	font-family: "Yandex Sans Text Regular";
+	font-family: 'Yandex Sans';
 	font-size: 1.6rem;
-	line-height: 1.6;
+	line-height: 1.2;
 	color: $primary-color;
 	min-height: 100%;
-	line-height: 1.2;
+	font-weight: 400;
+	letter-spacing: 1px;
 }
 
 h1,h2,h3,h4,h5,h6 {
-	font-family: "Yandex Sans Text";
-	text-transform: uppercase;
+	font-weight: 500;
+}
+p,span {
+	margin: 0;
 	font-weight: 400;
 }
-p {
-	margin: 0;
-	line-height: 1.4;
-}
-
-
-//Helpers*******************************************
-.wrapper {
-	max-width: 1170px;
-	width: 80%;
-	margin: 0 auto;
-	text-align: center;
-	&--nav {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		position: relative;
-	}
-	&--footer {
-		padding: 70px 0 10px 0;
-
-	}
-}
-@media screen and (max-width: 1160px) {
-	.wrapper {
-		width: 90%;
-		&--footer {
-			padding-top: 30px;
-		}
-	}
-
-}
-.showMenu {
-	display: flex !important;
-}
-.hover {
-	color: $title-color !important;
-}
-.showText {
-	height: 100% !important;
-	display: block !important;
-}
-.open {
-	transform: translateX(0)!important;
-}
-
 
 
 //Helpers*******************************************
@@ -139,7 +101,7 @@ p {
 
 //Header section********************************************
 .nav {
-	background-color: rgba(25,25,25, .73);
+	background-color: rgba(25,25,25, .75);
 	color: $title-color;
 	position: fixed;
 	top: 0;
@@ -150,10 +112,9 @@ p {
 	justify-items: center;
 	z-index: 999;
 	&__logo {
-		width: 70px;
+		width: 79px;
 	}
 	&__links {
-		font-weight: normal;
 		text-transform: uppercase;
 		display: flex;
 	}
@@ -195,7 +156,7 @@ p {
 		border-radius: 15px;
 		z-index: 100;
 		transition: all .23s ease-in;
-		&::before {
+		box-shadow: 1px 1px 18px 0px rgba(50, 50, 50, 0.93);		&::before {
 			content: "";
   			position: absolute;
   			top: -22px;
@@ -227,6 +188,11 @@ p {
 	&__reg {
 		position: relative;
 		display: flex;
+	}
+}
+@media screen and (max-width: 768px) {
+	.nav__logo {
+		width: 70px;
 	}
 }
 
@@ -280,12 +246,11 @@ p {
 	top: 49px;	
 	z-index: 100000;
 	min-width: 200px;
-	width: 28%;
+	width: 25%;
 	height: 100vh;
 	&__links {
         width: 100%;
         text-align: left;
-		font-weight: 800;
 		li {
 		  margin: 10px 0;
 		  list-style: none;
@@ -323,7 +288,7 @@ p {
 	}
 	&__submenu-links {
 		display: none;
-		padding-top: 10px;
+		padding: 10px 0 0 15px;
 	}
 }
 .burger-wrap__submenu.active {
@@ -352,6 +317,11 @@ p {
 
 
 
+
+
+
+
+
 .header {
 	max-height: 927px;
 	line-height: 1.2;
@@ -372,11 +342,13 @@ p {
 	padding: 0 10px 90px 10px; 
 	&__discription {
 		padding: 0 10%;
-		opacity: .9;
-		font-weight: 400;
-		line-height: 1.4;
+		line-height: 1.3;
+		letter-spacing: 0;
 		&--link {
-			margin: 0 0 40px 0;
+			margin: 0 0 20px 0;
+			font-size: 1.8rem;
+			padding: 0;
+
 		}
 	}
 	&__wrap-app {
@@ -403,10 +375,14 @@ p {
 	&__title {
 		font-size: 3.6rem;
 		letter-spacing: 2px;
-		margin: 120px 0 50px 0;
+		margin: 115px 0 40px 0;
+		text-transform: uppercase;
 	}
 	&__text {
 		padding: 0 30px;
+		line-height: 1.4;
+		letter-spacing: normal;
+		font-size: 1.8rem;
 	}
 }
 @media screen and (max-width:1024px) {
@@ -449,6 +425,7 @@ p {
 	&__text {
 		line-height: 1.4;
 		padding: 0 10%;
+		letter-spacing: .5px;
 	}
 
 }
@@ -470,16 +447,19 @@ p {
 
 //Chance section******************************
 .chance {
+	font-size: 1.8rem;
 	padding: 125px 0 150px 0;
 	&__title {
 		font-size: 3.6rem;
+		text-transform: uppercase;
+		letter-spacing: 3px;
 	}
 	&__content {
 		display: flex;
-		margin-top: 120px;
+		margin-top: 125px;
 	}
 	&__items {
-		width: 40%;
+		width: 42%;
 		padding-top: 55px;	
 	}
 	&__img-wrap {
@@ -492,9 +472,10 @@ p {
 	&__text {
 		text-align: left;
 		padding: 0 5px;
-		letter-spacing: .5px;
+		letter-spacing: 1px;
+		line-height: 1.3;
 		&:last-of-type { 
-			margin-top: 20px;
+			margin-top: 35px;
 		}
 	}
 }
@@ -539,31 +520,33 @@ p {
 //advantage section******************************
 
 .advantage {
-	padding: 100px 0 50px 0;
+	padding: 85px 0 30px 0;
 	&__title,
 	&__subtitle {
 		font-size: 3.6rem;
 	}
 	&__title {	
 		margin: 0 0 45px 0;
+		text-transform: uppercase;
 	}
 	&__subtitle {
 		padding: 0 0 0 70px;
+	}
+	&__description {
+		padding: 0 50px;
 	}
 	&__content {
 		text-align: left;
 		display: flex;
 		flex-direction: column;
+		align-items: center;
 		width: 50%;
-		margin: 130px 0 0 85px;	
+		margin: 85px 0 0 65px;	
 	}
 	&__content-item {
 		display: flex;
 		flex-direction: column;
-		margin-top: 55px;
-		p {
-			padding-right: 40px;
-		}
+		margin-top: 60px;
 	}
 	&__wrap {
 		display: flex;
@@ -584,14 +567,14 @@ p {
 		left: -75px;
 		top: -15px;
 		font-size: 12.4rem;
-		font-family: "Yandex Sans Text Bold";
 		opacity: .2;
+		font-weight: 700;
 	}
 	&__lists,
-	&__text {
-		opacity: .9;
+	&__text,
+	&__content-item {
 		font-size: 1.8rem;
-	}
+	}	
 	&__lists {
 		margin: 0;
 		padding: 0;
@@ -648,7 +631,7 @@ p {
 //Rent section******************************************
 .rent {
 	background: $bg-whyMe;
-	padding: 45px 0 85px 0;
+	padding: 50px 0 75px 0;
 	&__title {
 		font-size: 3.6rem;
 		letter-spacing: 2px;
@@ -666,16 +649,16 @@ p {
 	&__item {
 		width: 33%;
 		min-width: 250px;
-		padding: 0 15px;
+		padding: 0 5px;
 		position: relative;
-		// top: -35px;
 	}
 	&__item-title {
 		margin: 25px 0 35px 0;
-		font-family: "Yandex Sans Text"; 
 		font-size: 2.4rem;
 		color: $red-color;
 		text-transform: uppercase;
+		padding: 0 15px;
+		font-weight: 500;
 	}
 	&__icon {
 		position: relative;
@@ -684,9 +667,9 @@ p {
 	}
 	&__text {
 		font-size: 1.8rem;
-		// opacity: .7;
 		color: $primary-color;
 		text-justify: auto;
+		letter-spacing: .5px;
 	}
 }
 @media screen and (max-width: 1024px) {
@@ -739,16 +722,8 @@ p {
 .possibility {
 	overflow: hidden;
 	line-height: 1;
-	// height: 730px;
-	// background: url("../img/bg_possibility.png") right no-repeat;
-	// background-size: 60%;
 	color: $title-color;
 	position: relative;
-	// z-index: -2;
-	// &>.wrapper {
-	// 	display: flex;
-	// 	// justify-content: flex-end;
-	// }
 	&__bg {
 		position: absolute;
 		right: 0;
@@ -756,7 +731,6 @@ p {
 		transform: translateY(-50%);
 		z-index: -3;
 		height: 90%;
-		// width: 60%;
 		max-width: 100%;	
 	}
 	&__title {
@@ -769,9 +743,7 @@ p {
 		text-align: left;
 		width: 60%;
 		position: relative;
-		padding: 35px 20px 40px 18%;
-		// overflow: hidden;
-		// background: $red-color;
+		padding: 35px 20px 20px 18%;
 		&:before {
 			content: '';
 			display: block;
@@ -779,7 +751,6 @@ p {
 			height: 200%;
 			position: absolute;
 			background: $red-color;
-			// background: url("../img/bg_possibility-red.png") center no-repeat;
 			background-size: 100%;
 			z-index: -1;
 			bottom: -40%;
@@ -789,7 +760,7 @@ p {
 	}
 	&__text {
 		margin-top: 35px;
-		// letter-spacing: 1.2px;
+		letter-spacing: 1.2px;
 		opacity: .9;
 		font-size: 1.8rem;
 		&--margin {
@@ -804,17 +775,20 @@ p {
 		letter-spacing: 1.2px;
 		font-size: 1.8rem;
 		opacity: .9;
-		margin-top: 55px;
+		margin-top: 60px;
 		position: relative;
+		&:first-of-type {
+			margin-top: 70px;
+		}
 	}
 	&__number {
 		position: absolute;
 		color: #fa171b;
 		font-size: 6.4rem;
-		font-family: "Yandex Sans Text Bold";
 		top: -35px;
 		left: -60px;
 		z-index: -1;
+		font-weight: 700;
 	}
 }
 @media screen and (max-width:1500px) {
@@ -954,10 +928,11 @@ p {
 
 //preview section******************************
 .preview {
-	padding: 180px 0 250px 0;
+	padding: 160px 0 200px 0;
 	&__title {
 		font-size: 3.6rem;
-		letter-spacing: 1px;	
+		letter-spacing: 1px;
+		text-transform: uppercase;	
 	}
 	&__description {
 		font-size: 1.8rem;
@@ -970,18 +945,17 @@ p {
 			flex-direction: row-reverse;
 		}
 		&:first-of-type {
-			margin-top: 40px;
+			margin-top: 125px;
 			
 		}
 	}
 	&__content {
 		width: 50%;
-		padding: 0 40px 0 20px;
+		padding: 0 20px 0 20px;
 	}
 	&__img-wrap {
-		width: 40%;
+		width: 50%;
 		overflow: hidden;
-		padding: 10px;
 		display: flex;
 		justify-content:center;
 		align-items: center;
@@ -995,6 +969,10 @@ p {
 		text-transform: none;
 		color: $red-color;
 		margin: 0 0 30px;
+	}
+	&__text {
+		line-height: 1.3;
+		font-size: 1.8rem;
 	}
 }
 @media screen and (max-width:1024px) {
@@ -1030,6 +1008,7 @@ p {
 	&__title {
 		font-size: 3.6rem;
 		margin: 0 0 60px 0;
+		text-transform: uppercase;
 	}
 	&__items {
 		display: flex;
@@ -1041,17 +1020,20 @@ p {
 		font-size: 1.8rem;
 		position: relative;
 		line-height: 1;
+		letter-spacing: 0;
 		&:not(:first-of-type) {
-			margin-top: 60px;
+			margin-top: 70px;
 		}
 	}
 	&__subtitle {
 		font-size: 1.8rem;
 		margin-top: 60px;
 		padding: 0 11%;
+		letter-spacing: normal;
+		line-height: 1.3;
 	}
 	&__number {
-		font-family: "Yandex Sans Text Bold";
+		font-weight: 700;
 		opacity: .12;
 		display: block;
 		font-size: 6.4rem;
@@ -1116,7 +1098,6 @@ p {
 //womt-rent section******************************
 .wont-rent {
 	overflow: hidden;
-	// height: 730px;
 	background: url("../img/technica-bg.png") no-repeat;
 	background-position: -100px;
 	background-size: 70%;
@@ -1132,20 +1113,20 @@ p {
 		letter-spacing: 1px;
 		position: relative;
 		text-transform: none;
-		line-height: 1.4;
-		font-family: "Yandex Sans Text Regular"; 
 	}
 	&__line {
 		width: 195px;
 		height: 5px;
 		background: $title-color;
-		margin: 15px 0 55px 0;
+		margin: -10px 0 50px 0;
 	}		
 	&__content {
 		text-align: left;
 		width: 50%;
-		min-height: 750px;
-		padding: 0 0 70px 85px;
+		min-height: 755px;
+		padding: 70px 0 60px 30px;
+		font-size: 1.8rem;
+		font-weight: 400;
 		&:before {
 			content: '';
 			display: block;
@@ -1156,12 +1137,12 @@ p {
 			background-size: 100%;
 			z-index: -1;
 			bottom: -40%;
-			right: -88%;
+			right: -85%;
 			transform: rotate(-80deg);
 		}
 	}
 	&__item {
-		margin-bottom: 30px;
+		margin-bottom: 25px;
 	}
 }
 
@@ -1185,7 +1166,7 @@ p {
 @media screen and (max-width:900px) {
 	.wont-rent {
 		&__content:before {
-			right: -155%;
+			right: -133%;
 		}
 	}
 }
@@ -1226,7 +1207,8 @@ p {
 	padding: 0 0 100px 0;
 	&__title {
 		font-size: 3.6rem;
-		margin: 0 0 60px 0;
+		margin: 0 0 45px 0;
+		text-transform: uppercase;
 	}
 	&__items {
 		display: flex;
@@ -1238,9 +1220,10 @@ p {
 		padding: 0 110px 0 180px;
 		font-size: 1.8rem;
 		position: relative;
-		line-height: 1;
+		line-height: 1.2;
+		letter-spacing: 0;
 		&:not(:first-of-type) {
-			margin-top: 110px;
+			margin-top: 115px;
 		}
 	}
 	&__subtitle {
@@ -1252,7 +1235,7 @@ p {
 		}
 	}
 	&__number {
-		font-family: "Yandex Sans Text Bold";
+		font-weight: 700;
 		opacity: .12;
 		display: block;
 		font-size: 9.4rem;
@@ -1323,7 +1306,7 @@ p {
 		margin-bottom: 60px;
 	}
 	&__info-wrap {
-		width: 33%;
+		width: 32%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -1334,8 +1317,7 @@ p {
 		color: $title-color;
 		text-decoration: none;
 		opacity: .9;
-		letter-spacing: 1px;
-		font-weight: 300;
+		font-weight: 400;
 	}
 	&__link {
 		margin-top: 13px;
@@ -1350,8 +1332,8 @@ p {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		width: 30px;
-		height: 30px;
+		width: 35px;
+		height: 35px;
 		border: 2px solid $red-color;
 		border-radius: 50%;	
 	}
