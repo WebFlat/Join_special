@@ -21,6 +21,10 @@ jQuery(function($){
 		$('.burger-wrap').toggleClass('open');
 		$('.burger').toggleClass('closed');
 	});
+	$('.nav__link').click(function() {
+		$('.burger-wrap').removeClass('open');
+		$('.burger').removeClass('closed');
+	});
 
 //change background nav when scroll************************
 	$(window).scroll(function() {
@@ -34,18 +38,47 @@ jQuery(function($){
 	
 	
 	//Show-hide submunu registration*****************************
-	$('.nav__link--reg').click(function() {
+	$('#registration-btn').click(function() {
+		$('#submenu').addClass('showMenu');
+		$('.nav__popup-menu').show();
+		$('html').css('overflow', 'hidden');
+	});
+
+	function show() {
+		$('#submenu').addClass('showMenu');
+		$('.nav__popup-menu').hide();
+		$('html').css('overflow', 'hidden');
+
+	}
+	//show-hide form************************************************
+	$('.showDoc1').click(function() {
+		show();
+		$('#popup1').show('fast', 'linear');
+	});
+	$('.showDoc2').click(function() {
+		show();	
+		$('#popup2').show('fast', 'linear');
+	});
+	$('.showDoc3').click(function() {
+		show();
+		$('#popup3').show('fast', 'linear');
 		
-		$('#submenu').toggleClass('showMenu');
-		$('#registration').toggleClass('hover');
 	});
-	$(document).on('click', function(e) {
-		if (!$(e.target).closest('.nav__link--reg').length) {
-			$('#submenu').removeClass('showMenu');
-			$('.nav__link--reg').removeClass('hover');
-		}
-		e.stopPropagation();
+	$('.btn-close').click(function() {
+		$('.popup1').hide();
+		$('html').css('overflow', 'visible');
+		$('#submenu').removeClass('showMenu');
+
 	});
+
+	
+	
+		
+			
+
+
+
+
 	//Accardion submenu**************************************  
 	$('.burger-wrap__submenu').click(function(event){
 		$(this).toggleClass('active');

@@ -1,62 +1,179 @@
 <section class="header">
-<nav class="nav">
-    <div class="wrapper wrapper--nav">
-        <a href="#" class="nav__logo-wrap">
-            <img src="./img/logo2.png" alt="Join" class="nav__logo"/>
-        </a>
-        <div class="nav__links">
-                <a href="#" target="_blank"class="nav__link">
-                    Услуги
-                </a>
-                <a href="#" target="_blank"class="nav__link">
-                    Заказчикам
-                </a>
-                <a href="#" target="_blank"class="nav__link">
-                    Перевозчикам
-                </a>
-                <a href="#" target="_blank"class="nav__link">
-                    Документы
-                </a>
-                <a href="#" target="_blank"class="nav__link">
-                    Контакты
-                </a>
-                <div class="nav__reg">
-                    <span id="registration" class="nav__link nav__link--reg">
-                            Регистрация
-                    </span>
-                    <div class="nav__popup" id="submenu">
-                        <a href="#" class="nav__popup-link">Я заказчик</a>
-                        <a href="#" class="nav__popup-link">Я перевозчик</a>
-                        <a href="#" class="nav__popup-link">Я физ лицо</a>
+    <nav class="nav">
+        <div class="wrapper wrapper--nav">
+            <a href="#" class="nav__logo-wrap">
+                <img src="./img/logo2.png" alt="Join" class="nav__logo"/>
+            </a>
+            <div class="nav__links">
+                    <a href="#sevices" class="nav__link">
+                        Услуги
+                    </a>
+                    <a href="#customer" class="nav__link">
+                        Заказчикам
+                    </a>
+                    <a href="#carrier" class="nav__link">
+                        Перевозчикам
+                    </a>
+                    <a target="_blank" href="../index.html/#documents" class="nav__link">
+                        Документы
+                    </a>
+                    <a href="#footer" class="nav__link">
+                        Контакты
+                    </a>
+                    <div class="nav__reg" id="registration-btn">
+                        <span class="nav__link nav__link--reg">
+                                Регистрация
+                        </span>
                     </div>
+            </div>
+            <div class="burger">
+                <div class="burger__line"></div>
+                <div class="burger__line"></div>
+                <div class="burger__line"></div>   
+            </div>
+            <div class="burger-wrap">
+                <ul class="burger-wrap__links">
+                    <li><a class="nav__link" href="#sevices">Услуги</a></li>
+                    <li><a class="nav__link" href="#customer">Заказчикам</a></li>
+                    <li><a class="nav__link" href="#carrier">Перевозчикам</a></li>
+                    <li><a class="nav__link" target="_blank" href="../index.html/#documents">Документы</a></li>
+                    <li><a class="nav__link" href="#footer">Контакты</a></li>
+                    <li style="margin-top: 20px;"><span class="nav__sublinks burger-wrap__submenu" >Регистрация</span>
+                        <ul class="burger-wrap__submenu-links">
+                            <li><a class="nav__link showDoc1" >Я заказчик</a></li>
+                            <li><a class="nav__link showDoc2" >Я перевозчик</a></li>
+                            <li><a class="nav__link showDoc3" >Я физ лицо</a></li>
+                        </ul>
+                </ul>
+            </div>
+            
+        </div>    
+    </nav>
+    <div class="header__content">
+        <div class="header__img-wrap">
+            <img class="header__img" src="./img/header_bg.png" alt="picture"/>
+        </div>
+    </div>
+    <div class="nav__popup" id="submenu">
+        <div class="nav__popup-menu">
+            <div class="popup1__close btn-close" id="btn-close">×</div>
+            <h5 class="nav__popup-title">Регистрация</h5>
+            <div class="nav__popup-links">
+                <div class="nav__popup-link showDoc1">Я заказчик</div>
+                <div class="nav__popup-link showDoc2">Я перевозчик</div>
+                <div class="nav__popup-link showDoc3">Я физ лицо</div>
+            </div>    
+        </div>
+        <div class="popup1" id="popup1">
+            <form action="POST" id="customer-mail-form" class="popup1__form">
+                <div class="popup1__close btn-close" id="btn-close">×</div>
+                <h2 class="popup1__title">Регистрационная карта пассажирской компании</h2>
+                <div class="popup1__form-group popup1__form-group--input">
+                    <label>ИНН:</label>
+                    <input type="number" class="popup1__form-control" minlength="10" maxlength="10" name="inn" id="inn" required pattern="[0-9]">
                 </div>
+                <div class="popup1__form-group popup1__form-group--input">
+                    <label>КПП:</label>
+                    <input type="number" class="popup1__form-control" maxlength="9" name="kpp" id="kpp" required pattern="[0-9]">
+                </div>
+                <div class="popup1__form-group popup1__form-group--input">
+                    <label>БИК:</label>
+                    <input type="number" class="popup1__form-control" maxlength="9" name="bik" id="bik" required pattern="[0-9]">
+                </div>
+                <div class="popup1__form-group popup1__form-group--input">
+                    <label>Р/С:</label>
+                    <input type="number" class="popup1__form-control" maxlength="20" name="rs" id="rs" required pattern="[0-9]">
+                </div>
+                <div class="popup1__form-group popup1__form-group--input">
+                    <label>Телефон (без +7):</label>
+                    <input type="number" class="popup1__form-control" maxlength="10" name="phone" id="phone" required pattern="[0-9]">
+                </div>
+                <div class="popup1__form-group popup1__form-group--input">
+                    <label>Email бухгалтерии:</label>
+                    <input type="email" class="popup1__form-control" maxlength="32" name="emailBuhg" id="emailBuhg" required>
+                </div>
+                <div class="popup1__form-group">
+                    <input type="checkbox" name="termbox" id="customer_termsId" required>
+                    <label for="customer_termsId">Я принимаю <a target="_blank" href="http://join24.ru/documents/Пользовательское%20соглашение%20для%20использования%20сервиса%20JOIN24.pdf">пользовательское соглашение</a></label>
+                </div>
+                <div class="popup1__form-group">
+                    <input type="checkbox" name="termbox" id="customer_policyId" required>
+                    <label for="customer_policyId">Я принимаю <a target="_blank" href="http://join24.ru/documents/Политика%20конфиденциальности%20join24.pdf">политику конфиденциальности</a></label>
+                </div>
+                <div class="popup1__form-group">
+                    <input type="checkbox" name="termbox" id="customer_licenseId" required>
+                    <label for="customer_licenseId">Я согласен с <a target="_blank" href="http://join24.ru/documents/Лицензионное%20соглашение%20на%20использование%20программы.pdf">лицензионным соглашением</a></label>
+                </div>
+                <div class="popup1__form-group">
+                    <input type="checkbox" name="termbox" id="customer_charteringId" required>
+                    <label for="customer_charteringId">Я принимаю условия <a target="_blank" href="http://site/documents/Договора%20фрахтования%20транспортного%20средства%20для%20перевозки%20грузов.pdf">договора фрахтования</a></label>
+                </div>
+                <input type="text" class="popup1__form-control" value="rider" name="regCardType" id="regCardType" style="display: none;">
+                <button type="submit" id="customer_submit" class="btn btn-default">Отправить</button>
+            </form>
         </div>
-        <div class="burger">
-            <div class="burger__line"></div>
-            <div class="burger__line"></div>
-            <div class="burger__line"></div>   
+        <div class="popup1" id="popup2">
+            <form action="POST" id="carrier-mail-form" class="popup1__form">
+                <div class="popup1__close btn-close" id="btn-close">×</div>
+                <h2 class="popup1__title">Регистрационная карта транспортной компании</h2>
+                <div class="popup1__form-group popup1__form-group--input">
+                    <label>ИНН:</label>
+                    <input type="number" class="popup1__form-control" minlength="10" maxlength="10" name="inn" id="inn" required pattern="[0-9]">
+                </div>
+                <div class="popup1__form-group popup1__form-group--input">
+                    <label>КПП:</label>
+                    <input type="number" class="popup1__form-control" maxlength="9" name="kpp" id="kpp" required pattern="[0-9]">
+                </div>
+                <div class="popup1__form-group popup1__form-group--input">
+                    <label>БИК:</label>
+                    <input type="number" class="popup1__form-control" maxlength="9" name="bik" id="bik" required pattern="[0-9]">
+                </div>
+                <div class="popup1__form-group popup1__form-group--input">
+                    <label>Р/С:</label>
+                    <input type="number" class="popup1__form-control" maxlength="20" name="rs" id="rs" required pattern="[0-9]">
+                </div>
+                <div class="popup1__form-group popup1__form-group--input">
+                    <label>Телефон (без +7):</label>
+                    <input type="number" class="popup1__form-control" maxlength="10" name="phone" id="phone" required pattern="[0-9]">
+                </div>
+                <div class="popup1__form-group popup1__form-group--input">
+                    <label>Email бухгалтерии:</label>
+                    <input type="email" class="popup1__form-control" maxlength="32" name="emailBuhg" id="emailBuhg" required>
+                </div>
+                <div class="popup1__form-group">
+                    <input type="checkbox" name="termbox" id="customer_termsId" required>
+                    <label for="customer_termsId">Я принимаю <a target="_blank" href="http://join24.ru/documents/Пользовательское%20соглашение%20для%20использования%20сервиса%20JOIN24.pdf">пользовательское соглашение</a></label>
+                </div>
+                <div class="popup1__form-group">
+                    <input type="checkbox" name="termbox" id="customer_policyId" required>
+                    <label for="customer_policyId">Я принимаю <a target="_blank" href="http://join24.ru/documents/Политика%20конфиденциальности%20join24.pdf">политику конфиденциальности</a></label>
+                </div>
+                <div class="popup1__form-group">
+                    <input type="checkbox" name="termbox" id="customer_licenseId" required>
+                    <label for="customer_licenseId">Я согласен с <a target="_blank" href="http://join24.ru/documents/Лицензионное%20соглашение%20на%20использование%20программы.pdf">лицензионным соглашением</a></label>
+                </div>
+                <div class="popup1__form-group">
+                    <input type="checkbox" name="termbox" id="customer_charteringId" required>
+                    <label for="customer_charteringId">Я принимаю условия <a target="_blank" href="http://site/documents/Договора%20фрахтования%20транспортного%20средства%20для%20перевозки%20грузов.pdf">договора фрахтования</a></label>
+                </div>
+                <input type="text" class="popup1__form-control" value="rider" name="regCardType" id="regCardType" style="display: none;">
+                <button type="submit" id="customer_submit" class="btn btn-default">Отправить</button>
+            </form>
         </div>
-        <div class="burger-wrap">
-            <ul class="burger-wrap__links">
-                <li><a class="nav__link" href="#">Услуги</a></li>
-                <li><a class="nav__link" href="#">Заказчикам</a></li>
-                <li><a class="nav__link" href="#">Перевозчикам</a></li>
-                <li><a class="nav__link" href="#">Документы</a></li>
-                <li><a class="nav__link" href="#footer">Контакты</a></li>
-                <li style="margin-top: 20px;"><span class="nav__link burger-wrap__submenu" >Регистрация</span>
-                    <ul class="burger-wrap__submenu-links">
-                        <li><a class="nav__link" href="#">Я заказчик</a></li>
-                        <li><a class="nav__link" href="#">Я перевозчик</a></li>
-                        <li><a class="nav__link" href="#">Я физ лицо</a></li>
-                    </ul>
-            </ul>
+        <div class="popup1" id="popup3">
+            <div action="POST" class="popup1__form">
+                <div class="popup1__close btn-close" id="btn-close">×</div>
+                <h2 class="popup1__title">Скачайте одно из наших приложений</h2>
+                <div class="apps__wrap-app">
+                    <a href="https://play.google.com/store">
+                        <img src="./img/appStore.png" alt="appstore" class="apps__app">
+                    </a>
+                    <a href="https://www.apple.com/itunes/">
+                        <img src="./img/googlePlay.png" alt="googleplay" class="apps__app">
+                    </a>
+                </div>
+            </div>
         </div>
         
-    </div>    
-</nav>
-<div class="header__content">
-    <div class="header__img-wrap">
-        <img class="header__img" src="./img/header_bg.png" alt="picture"/>
     </div>
-</div>
 </section>
